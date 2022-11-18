@@ -23,6 +23,16 @@ public class HomeWork {
         }
     }
 
+    public static void deliveryDays (int deliveryDistance) {
+        System.out.println("Удаленность клиента " + deliveryDistance + " км");
+        if (deliveryDistance > 100) {
+            System.out.println(" Извините, доставка невозможна");
+        } else {
+            System.out.println("На доставку потребуется дней: " + (1 + (deliveryDistance + 19) / 40));
+        }
+    }
+
+
 
     public static void main(String[] args) {
         /// Задача 1
@@ -42,6 +52,16 @@ public class HomeWork {
         clientOS = false;
         clientDeviceYear = 2030;
         clientDevice(clientOS, clientDeviceYear);
+
+
+        /// Задача 3
+        System.out.println(" Задача 3 ");
+        int deliveryDistance = 95;
+        deliveryDays(deliveryDistance);
+        deliveryDistance = 50;
+        deliveryDays(deliveryDistance);
+        deliveryDistance = 20;
+        deliveryDays(deliveryDistance);
 
 
     }
