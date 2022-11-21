@@ -3,9 +3,9 @@ import java.time.LocalDate;
 public class HomeWork {
 
     public static void leapYear (int yearNumbers) {
-        if (yearNumbers % 4 == 0) {
+        if (yearNumbers % 4 == 0 && yearNumbers % 100 != 0 || yearNumbers % 400 == 0) {
             System.out.println(yearNumbers + " - год высокосный");
-        } else if (yearNumbers % 100 != 0 || yearNumbers % 400 == 0) {
+        } else  {
             System.out.println(yearNumbers + " - год невысокосный");
         }
     }
@@ -14,12 +14,12 @@ public class HomeWork {
         String lightVersion;
         int currentYear = LocalDate.now().getYear();
         if (clientDeviceYear > currentYear) {
-            lightVersion = " ";
+            lightVersion = "";
         } else lightVersion = " облегченную";
         if (clientOS) {
-            System.out.println("Установите " + lightVersion + " для iOS устройства");
+            System.out.println("Установите " + lightVersion + " версию для iOS устройства");
         } else {
-            System.out.println("Установите " + lightVersion + " для Android устройства");
+            System.out.println("Установите " + lightVersion + " версию для Android устройства");
         }
     }
 
