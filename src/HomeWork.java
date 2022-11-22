@@ -2,6 +2,19 @@ import java.time.LocalDate;
 
 public class HomeWork {
 
+    public static void clientDevice (int typeOs , int yearDevice) {
+        int currentYear = LocalDate.now().getYear();
+        if (currentYear > yearDevice && typeOs == 1) {
+            System.out.println(" Установите lite-версию для Android");
+        } else if (currentYear <= yearDevice && typeOs == 1) {
+            System.out.println("Установите версию для Android");
+        } else if (currentYear > yearDevice && typeOs == 0) {
+            System.out.println(" Установите lite-версию для iOS");
+        } else if (currentYear <= yearDevice && typeOs == 0) {
+            System.out.println(" Установите версию для iOS");
+        }
+    }
+
     public static void leapYear (int yearNumbers) {
         if (yearNumbers % 4 == 0 && yearNumbers % 100 != 0 || yearNumbers % 400 == 0) {
             System.out.println(yearNumbers + " - год высокосный");
@@ -10,18 +23,7 @@ public class HomeWork {
         }
     }
 
-    public static void clientDevice (boolean clientOS , int clientDeviceYear) {
-        String lightVersion;
-        int currentYear = LocalDate.now().getYear();
-        if (clientDeviceYear > currentYear) {
-            lightVersion = "";
-        } else lightVersion = " облегченную";
-        if (clientOS) {
-            System.out.println("Установите " + lightVersion + " версию для iOS устройства");
-        } else {
-            System.out.println("Установите " + lightVersion + " версию для Android устройства");
-        }
-    }
+
 
     public static void deliveryDays (int deliveryDistance) {
         System.out.println("Удаленность клиента " + deliveryDistance + " км");
@@ -46,12 +48,10 @@ public class HomeWork {
 
         /// Задача 2
         System.out.println(" Задача 2 ");
-        boolean clientOS = true;
-        int clientDeviceYear = 2020;
-        clientDevice(clientOS , clientDeviceYear);
-        clientOS = false;
-        clientDeviceYear = 2030;
-        clientDevice(clientOS, clientDeviceYear);
+        int typeOS = 0;
+        int yearDevice = 2020;
+        clientDevice(typeOS ,yearDevice);
+
 
 
         /// Задача 3
